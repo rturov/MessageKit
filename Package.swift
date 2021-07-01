@@ -40,13 +40,13 @@ let package = Package(
             dependencies: ["InputBarAccessoryView"],
             path: "Sources",
             exclude: ["Supporting/Info.plist", "Supporting/MessageKit.h"],
-            resources: [.copy("Resources")],
+            resources: [.process("Resources")],
             swiftSettings: [SwiftSetting.define("IS_SPM")]
         ),
         .testTarget(
             name: "MessageKitTests",
             dependencies: ["MessageKit"],
-            resources: [.copy("Resources")]
+            resources: [.process("Resources")]
         )
     ],
     swiftLanguageVersions: [.v5]
